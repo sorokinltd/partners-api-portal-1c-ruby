@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://partner-api.1c.ru/api/rest/public/subscription/checkItsByLogin
+    body:
+      encoding: UTF-8
+      string: '{"loginList":["foobar@example.com","foo@example.com","bar@example.com"]}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.7.10
+      Authorization:
+      - Basic <AUTH>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Apache-Coyote/1.1
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
+      X-Frame-Options:
+      - DENY
+      X-Application-Context:
+      - application:live:8840
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Thu, 27 Jul 2023 17:28:39 GMT
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        W3sic3RhdHVzIjoiTG9naW5Ob3RGb3VuZCIsImNvZGUiOjEwMiwiZGVzY3JpcHRpb24iOiLQn9C+0LvRjNC30L7QstCw0YLQtdC70Ywg0YEg0YLQsNC60LjQvCDQu9C+0LPQuNC90L7QvCDQvdC1INC90LDQudC00LXQvS4iLCJsb2dpbiI6ImZvb2JhckBleGFtcGxlLmNvbSIsIml0c0NvbnRyYWN0SW5mbyI6W119LHsic3RhdHVzIjoiTG9naW5Ob3RGb3VuZCIsImNvZGUiOjEwMiwiZGVzY3JpcHRpb24iOiLQn9C+0LvRjNC30L7QstCw0YLQtdC70Ywg0YEg0YLQsNC60LjQvCDQu9C+0LPQuNC90L7QvCDQvdC1INC90LDQudC00LXQvS4iLCJsb2dpbiI6ImZvb0BleGFtcGxlLmNvbSIsIml0c0NvbnRyYWN0SW5mbyI6W119LHsic3RhdHVzIjoiTG9naW5Ob3RGb3VuZCIsImNvZGUiOjEwMiwiZGVzY3JpcHRpb24iOiLQn9C+0LvRjNC30L7QstCw0YLQtdC70Ywg0YEg0YLQsNC60LjQvCDQu9C+0LPQuNC90L7QvCDQvdC1INC90LDQudC00LXQvS4iLCJsb2dpbiI6ImJhckBleGFtcGxlLmNvbSIsIml0c0NvbnRyYWN0SW5mbyI6W119XQ==
+  recorded_at: Thu, 27 Jul 2023 17:28:39 GMT
+recorded_with: VCR 6.2.0

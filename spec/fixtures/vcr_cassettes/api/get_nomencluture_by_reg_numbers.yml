@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://partner-api.1c.ru/api/nomenclature/getByRegNumbers
+    body:
+      encoding: UTF-8
+      string: "[801895197,20016806416,800129572]"
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.7.10
+      Authorization:
+      - Basic <AUTH>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Apache-Coyote/1.1
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
+      X-Frame-Options:
+      - DENY
+      X-Application-Context:
+      - application:live:8840
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Thu, 27 Jul 2023 17:49:33 GMT
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        W3sicmVnTnVtIjo4MDAxMjk1NzIsInNlcmlhbE51bWJlciI6IjQ2MDE1NDYwOTAzMDAiLCJuYW1lIjoiMdChOtCR0YPRhdCz0LDQu9GC0LXRgNC40Y8g0LPQvtGB0YPQtNCw0YDRgdGC0LLQtdC90L3QvtCz0L4g0YPRh9GA0LXQttC00LXQvdC40Y8gOCJ9LHsicmVnTnVtIjoyMDAxNjgwNjQxNiwic2VyaWFsTnVtYmVyIjoiNDYwMTU0NjA0NDQzMyIsIm5hbWUiOiIxQzrQl9Cw0YDQv9C70LDRgtCwINC4INCj0L/RgNCw0LLQu9C10L3QuNC1INCf0LXRgNGB0L7QvdCw0LvQvtC8IDguINCR0LDQt9C+0LLQsNGPINCy0LXRgNGB0LjRjyJ9LHsicmVnTnVtIjo4MDE4OTUxOTcsInNlcmlhbE51bWJlciI6IjQ2MDE1NDYwOTE5NzAiLCJuYW1lIjoiMdChOtCR0YPRhdCz0LDQu9GC0LXRgNC40Y8gOCDQmtCe0KDQnyJ9XQ==
+  recorded_at: Thu, 27 Jul 2023 17:49:31 GMT
+recorded_with: VCR 6.2.0

@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://partner-api.1c.ru/api/rest/public/industry/checkIndustryBySubscriberCode
+    body:
+      encoding: UTF-8
+      string: '{"subscriberCodeList":["CL-46015"]}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.7.10
+      Authorization:
+      - Basic <AUTH>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Apache-Coyote/1.1
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
+      X-Frame-Options:
+      - DENY
+      X-Application-Context:
+      - application:live:8840
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Thu, 27 Jul 2023 17:05:03 GMT
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        W3sic3RhdHVzIjoiRW1wdHlMaXN0IiwiY29kZSI6MTA2LCJkZXNjcmlwdGlvbiI6ItCjINC/0L7Qu9GM0LfQvtCy0LDRgtC10LvRjyDQvtGC0YHRg9GC0YHRgtCy0YPRjtGCINC60L7QvdGE0LjQs9GD0YDQsNGG0LjQuCwg0LTQu9GPINC60L7RgtC+0YDRi9GFINGC0YDQtdCx0YPQtdGC0YHRjyDRgdC10YDQstC40YEgMdChOtCY0KLQoSDQntGC0YDQsNGB0LvQtdCy0L7QuSIsInN1YnNjcmliZXJDb2RlIjoiQ0wtNDYwMTUiLCJwcm9ncmFtSW5mb0xpc3QiOm51bGx9XQ==
+  recorded_at: Thu, 27 Jul 2023 17:05:02 GMT
+recorded_with: VCR 6.2.0

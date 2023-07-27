@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://partner-api.1c.ru/api/client-program-access/search/reg-number
+    body:
+      encoding: UTF-8
+      string: '{"regNumber":801895197}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.7.10
+      Authorization:
+      - Basic <AUTH>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Apache-Coyote/1.1
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
+      X-Frame-Options:
+      - DENY
+      X-Application-Context:
+      - application:live:8840
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Thu, 27 Jul 2023 15:11:52 GMT
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        W3sicmVnTnVtYmVyIjo4MDE4OTUxOTcsInByb2dyYW0iOnsidWluIjoiNDljMDc1YTMtNGIxMC0xMWU1LTg2M2UtMDA1MDU2OTEwMDE4IiwibmFtZSI6IjHQoToyNzXQpNCXIiwibmljayI6IlRyZWFzdXJ5Mjc1IiwiY29uZmlndXJhdGlvbk5hbWUiOiLQmtCw0LfQvdCw0YfQtdC50YHRgtCy0L4yNzUiLCJncm91cFByb2dyYW0iOmZhbHNlLCJkZXZlbG9wZXJOYW1lIjpudWxsLCJpc0Jhc2UiOmZhbHNlLCJpbmR1c3RyeUFjY2Vzc0NoZWNrVGltZSI6bnVsbH0sImhhc0FjY2VzcyI6dHJ1ZSwibWlzc2luZ1N1cHBvcnRDb25kaXRpb25zIjpbXSwiaXRzU3Vic2NyaXB0aW9uVHlwZXMiOltdLCJwcm9ncmFtSW5kdXN0cnlTdWJzY3JpcHRpb25DYXRlZ29yaWVzIjpudWxsfSx7InJlZ051bWJlciI6ODAxODk1MTk3LCJwcm9ncmFtIjp7InVpbiI6IjVkNzliMzk5LWU0ZjQtMTFlMC04OTkzLTAwNTA1NjkxMDAxOCIsIm5hbWUiOiLQkdGD0YXQs9Cw0LvRgtC10YDQuNGPINC/0YDQtdC00L/RgNC40Y/RgtC40Y8g0JrQntCg0J8iLCJuaWNrIjoiQWNjb3VudGluZ0NvcnAiLCJjb25maWd1cmF0aW9uTmFtZSI6ItCR0YPRhdCz0LDQu9GC0LXRgNC40Y/Qn9GA0LXQtNC/0YDQuNGP0YLQuNGP0JrQntCg0J8iLCJncm91cFByb2dyYW0iOmZhbHNlLCJkZXZlbG9wZXJOYW1lIjpudWxsLCJpc0Jhc2UiOmZhbHNlLCJpbmR1c3RyeUFjY2Vzc0NoZWNrVGltZSI6bnVsbH0sImhhc0FjY2VzcyI6dHJ1ZSwibWlzc2luZ1N1cHBvcnRDb25kaXRpb25zIjpbXSwiaXRzU3Vic2NyaXB0aW9uVHlwZXMiOltdLCJwcm9ncmFtSW5kdXN0cnlTdWJzY3JpcHRpb25DYXRlZ29yaWVzIjpudWxsfSx7InJlZ051bWJlciI6ODAxODk1MTk3LCJwcm9ncmFtIjp7InVpbiI6IjVkNzliNDcwLWU0ZjQtMTFlMC04OTkzLTAwNTA1NjkxMDAxOCIsIm5hbWUiOiLQotC10YXQvdC+0LvQvtCz0LjRh9C10YHQutCw0Y8g0L/Qu9Cw0YLRhNC+0YDQvNCwIiwibmljayI6IlBsYXRmb3JtIiwiY29uZmlndXJhdGlvbk5hbWUiOm51bGwsImdyb3VwUHJvZ3JhbSI6ZmFsc2UsImRldmVsb3Blck5hbWUiOm51bGwsImlzQmFzZSI6ZmFsc2UsImluZHVzdHJ5QWNjZXNzQ2hlY2tUaW1lIjpudWxsfSwiaGFzQWNjZXNzIjp0cnVlLCJtaXNzaW5nU3VwcG9ydENvbmRpdGlvbnMiOltdLCJpdHNTdWJzY3JpcHRpb25UeXBlcyI6W10sInByb2dyYW1JbmR1c3RyeVN1YnNjcmlwdGlvbkNhdGVnb3JpZXMiOm51bGx9XQ==
+  recorded_at: Thu, 27 Jul 2023 15:11:51 GMT
+recorded_with: VCR 6.2.0

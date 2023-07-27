@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://partner-api.1c.ru/api/rest/public/subscriber
+    body:
+      encoding: UTF-8
+      string: '{"page":0,"size":1}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.7.10
+      Authorization:
+      - Basic <AUTH>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Apache-Coyote/1.1
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
+      X-Frame-Options:
+      - DENY
+      X-Application-Context:
+      - application:live:8840
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Thu, 27 Jul 2023 17:32:15 GMT
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJzdWJzY3JpYmVycyI6W3siY29kZSI6IkNMLTE2OTM4NyIsIm5hbWUiOiLQqNCw0Y/RhdC80LXRgtC+0LIg0KHQtdGA0LPQtdC5INCQ0LvQtdC60YHQsNC90LTRgNC+0LLQuNGHXG4iLCJzdWJqZWN0cyI6WyJTVUJTQ1JJUFRJT04iXSwicmVnTnVtYmVycyI6WzUwMDAwODU3NjYsNTAwMDA4NTc2Nyw1MDAwMDg1NzY0LDUwMDAwODU3NjUsNTAwMDA4NTc2Miw1MDAwMDg1NzYzLDUwMDAwODU3NjAsNTAwMDA4NTc2MSw1MDAwMDg1Nzc0LDUwMDAwODU3NzUsNTAwMDA4NTc3Miw1MDAwMDg1NzczLDUwMDAwODU3NzAsNTAwMDA4NTc3MSw1MDAwMDg1NzY4LDUwMDAwODU3NjksNTAwMDA4NTc4Miw1MDAwMDg1NzgzLDUwMDAwODU3ODAsNTAwMDA4NTc4MSw1MDAwMDg1Nzc4LDUwMDAwODU3NzksNTAwMDA4NTc3Niw1MDAwMDg1Nzc3LDUwMDAwODU3OTAsNTAwMDA4NTc5MSw1MDAwMDg1Nzg4LDUwMDAwODU3ODksNTAwMDA4NTc4Niw1MDAwMDg1Nzg3LDUwMDAwODU3ODQsNTAwMDA4NTc4NSw5NjYyOTg4LDUwMDAwODU3OTgsNTAwMDA4NTc5OSw1MDAwMDg1Nzk2LDUwMDAwODU3OTcsNTAwMDA4NTc5NCw1MDAwMDg1Nzk1LDUwMDAwODU3OTIsNTAwMDA4NTc5Myw1MDAwMDg1ODA2LDUwMDAwODU4MDcsNTAwMDA4NTgwNCw1MDAwMDg1ODA1LDUwMDAwODU4MDIsNTAwMDA4NTgwMyw1MDAwMDg1ODAwLDUwMDAwODU4MDEsNTAwMDA4NTc1OCw1MDAwMDg1NzU5LDUwMDAwODU3NTYsNTAwMDA4NTc1Nyw1MDAwMDg1NzU0LDgwMDE2MTQ4NSw1MDAwMDg1NzU1LDUwMDAwODU3NTIsNTAwMDA4NTc1M119XSwic2l6ZSI6MSwicGFnZSI6MCwidG90YWwiOjM0OX0=
+  recorded_at: Thu, 27 Jul 2023 17:32:15 GMT
+recorded_with: VCR 6.2.0
