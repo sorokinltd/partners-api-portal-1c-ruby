@@ -4,7 +4,7 @@
 
 * Get your login and password from https://portal.1c.ru/partner/faq
 
-## Quitstart
+## Quickstart
 
 ```rb
 require 'portal_1c'
