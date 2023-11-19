@@ -20,21 +20,21 @@ portal1c = Portal1C::Client.new('login', 'password')
 
 ```rb
 regnums = [801895194, 202680616, 8029772]
-result = porta1c.check_its_by_reg_num(regnums)
+result = portal1c.check_its_by_reg_num(regnums)
 ```
 
 #### Check contract by subscriber code
 
 ```rb
 codes = %w[CL-12382 CL-898382 CL-932992]
-result = porta1c.check_its_by_subscriber_code(codes)
+result = portal1c.check_its_by_subscriber_code(codes)
 ```
 
 #### Check contract by login
 
 ```rb
 logins = ['foobar@example.com', 'foo@example.com', 'bar@example.com']
-result = porta1c.check_its_by_login(logins)
+result = portal1c.check_its_by_login(logins)
 ```
 
 ### subscriber-rest-controller
@@ -42,7 +42,7 @@ result = porta1c.check_its_by_login(logins)
 #### Get subscribers list
 
 ```rb
-result = porta1c.subscriber(page: 0, size: 1)
+result = portal1c.subscriber(page: 0, size: 1)
 ```
 
 ### option-rest-controller
@@ -51,7 +51,7 @@ result = porta1c.subscriber(page: 0, size: 1)
 
 ```rb
 codes = %w[CL-12382 CL-898382 CL-932992]
-billing_report = porta1c.billing_report(type: 'CLOUD_BACKUP', subscriber_code_list: codes)
+billing_report = portal1c.billing_report(type: 'CLOUD_BACKUP', subscriber_code_list: codes)
 report_id = billing_report['reportUeid']
 result = portal1c.get_billing_report(report_id)
 ```
