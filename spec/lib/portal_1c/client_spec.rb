@@ -35,10 +35,7 @@ RSpec.describe Portal1C::Client do
 
   specify '#subscriber' do
     data = VCR.use_cassette('api/subscriber') do
-      api.subscriber({
-                       page: 0,
-                       size: 1
-                     })
+      api.subscriber(page: 0, size: 1)
     end
     expect(data['size']).to eq(1)
     expect(data['page']).to eq(0)
