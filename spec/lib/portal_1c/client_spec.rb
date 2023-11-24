@@ -118,4 +118,12 @@ RSpec.describe Portal1C::Client do
     end
     expect(data.length).to eq(0)
   end
+
+  specify '#users' do
+    data = VCR.use_cassette('api/users') do
+      api.users(login: 'test', email: 'test@email.com')
+    end
+    expect(data).to be_an_instance_of(Hash)
+    expect(data['found']).to be false
+  end
 end

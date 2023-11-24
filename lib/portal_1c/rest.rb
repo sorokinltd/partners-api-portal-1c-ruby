@@ -113,5 +113,13 @@ module Portal1C
         { login: login }
       )
     end
+
+    def users(body)
+      post(
+        'api/users',
+        self,
+        body
+      )
+    end
   end
 end
