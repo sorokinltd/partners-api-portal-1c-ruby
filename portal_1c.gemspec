@@ -12,4 +12,5 @@ Gem::Specification.new do |s|
   s.homepage    =
     'https://github.com/Suban05/partners-api-portal-1c-ruby'
   s.license = 'MIT'
+  s.add_dependency 'faraday', '>0'
 end
