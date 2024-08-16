@@ -79,7 +79,7 @@ module Portal1C
       post(
         'api/program-versions',
         self,
-        { cursor: cursor, nick: nick }
+        { cursor:, nick: }
       )
     end
 
@@ -110,7 +110,7 @@ module Portal1C
       post(
         'api/client-program-access/search/login',
         self,
-        { login: login }
+        { login: }
       )
     end
 

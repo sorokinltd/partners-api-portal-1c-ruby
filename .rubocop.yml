@@ -1,0 +1,55 @@
+---
+require:
+  - rubocop-rake
+  - rubocop-rspec
+  - rubocop-performance
+
+AllCops:
+  NewCops: enable
+  TargetRubyVersion: 3.3
+
+Style/Documentation:
+  Enabled: false
+
+Metrics/BlockLength:
+  AllowedMethods:
+    - context
+    - describe
+    - task
+
+Metrics/MethodLength:
+  Exclude:
+    - spec/**/*
+
+Layout/LineLength:
+  Max: 120
+
+Lint/MissingSuper:
+  Enabled: false
+
+RSpec/MultipleMemoizedHelpers:
+  Enabled: false
+
+RSpec/NestedGroups:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Exclude:
+    - 'spec/**/*'
+
+RSpec/MultipleExpectations:
+  Exclude:
+    - 'spec/**/*'
+
+Gemspec/RequiredRubyVersion:
+  Enabled: false
+
+Gemspec/RequireMFA:
+  Enabled: false
+
+Style/StringLiterals:
+  Exclude:
+    - 'portal_1c.gemspec'
+    
+Metrics/ModuleLength:
+  Enabled: false

@@ -9,8 +9,9 @@ Gem::Specification.new do |s|
   s.files = Dir.chdir(File.expand_path(__dir__)) do
     `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   end
-  s.homepage    =
+  s.homepage =
     'https://github.com/Suban05/partners-api-portal-1c-ruby'
   s.license = 'MIT'
   s.add_dependency 'faraday', '>0'
+  s.metadata['rubygems_mfa_required'] = 'true'
 end
