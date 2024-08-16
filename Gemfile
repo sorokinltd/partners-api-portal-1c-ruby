@@ -2,16 +2,15 @@
 
 source 'https://rubygems.org'
 gem 'faraday'
+gem 'rake'
 
 group :test do
-  gem 'rspec', '~> 3.12'
-  gem 'vcr', '~> 6.1.0'
-  gem 'webmock', '~> 3.18.1'
-end
-
-group :development do
-  gem 'dotenv', '~> 2.8.1'
-  gem 'rubocop', '~> 1.51.0'
-  gem 'rubocop-performance', '~> 1.0'
-  gem 'rubocop-rspec', '~> 2.0'
+  gem 'dotenv'
+  gem 'rspec'
+  gem 'rubocop'
+  gem 'rubocop-performance'
+  gem 'rubocop-rake'
+  gem 'rubocop-rspec'
+  gem 'vcr'
+  gem 'webmock'
 end
