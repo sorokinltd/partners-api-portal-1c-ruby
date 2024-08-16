@@ -4,27 +4,27 @@ module Portal1C
   module Rest
     include Portal1C::Request
 
-    def check_its_by_subscriber_code(*subscriber_code_list)
+    def check_its_by_subscriber_code(*subscriber_codes)
       post(
         'api/rest/public/subscription/checkItsBySubscriberCode',
         self,
-        { subscriberCodeList: subscriber_code_list }
+        { subscriberCodeList: subscriber_codes }
       )
     end
 
-    def check_its_by_reg_num(*reg_number_list)
+    def check_its_by_reg_num(*reg_numbers)
       post(
         'api/rest/public/subscription/checkItsByRegNum',
         self,
-        { regNumberList: reg_number_list }
+        { regNumberList: reg_numbers }
       )
     end
 
-    def check_its_by_login(*login_list)
+    def check_its_by_login(*logins)
       post(
         'api/rest/public/subscription/checkItsByLogin',
         self,
-        { loginList: login_list }
+        { loginList: logins }
       )
     end
 
@@ -51,27 +51,27 @@ module Portal1C
       )
     end
 
-    def check_industry_by_subscriber_code(*subscriber_code_list)
+    def check_industry_by_subscriber_code(*subscriber_codes)
       post(
         'api/rest/public/industry/checkIndustryBySubscriberCode',
         self,
-        { subscriberCodeList: subscriber_code_list }
+        { subscriberCodeList: subscriber_codes }
       )
     end
 
-    def check_industry_by_reg_num(*reg_number_list)
+    def check_industry_by_reg_num(*reg_numbers)
       post(
         'api/rest/public/industry/checkByRegNum',
         self,
-        { regNumberList: reg_number_list }
+        { regNumberList: reg_numbers }
       )
     end
 
-    def check_industry_by_login(*login_list)
+    def check_industry_by_login(*logins)
       post(
         'api/rest/public/industry/checkByLogin',
         self,
-        { loginList: login_list }
+        { loginList: logins }
       )
     end
 
@@ -90,11 +90,11 @@ module Portal1C
       )
     end
 
-    def get_nomencluture_by_reg_numbers(*reg_number_list)
+    def get_nomencluture_by_reg_numbers(*reg_numbers)
       post(
         'api/nomenclature/getByRegNumbers',
         self,
-        reg_number_list
+        reg_numbers
       )
     end
 
