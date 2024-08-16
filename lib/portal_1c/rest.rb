@@ -4,7 +4,7 @@ module Portal1C
   module Rest
     include Portal1C::Request
 
-    def check_its_by_subscriber_code(subscriber_code_list)
+    def check_its_by_subscriber_code(*subscriber_code_list)
       post(
         'api/rest/public/subscription/checkItsBySubscriberCode',
         self,
@@ -12,7 +12,7 @@ module Portal1C
       )
     end
 
-    def check_its_by_reg_num(reg_number_list)
+    def check_its_by_reg_num(*reg_number_list)
       post(
         'api/rest/public/subscription/checkItsByRegNum',
         self,
@@ -20,7 +20,7 @@ module Portal1C
       )
     end
 
-    def check_its_by_login(login_list)
+    def check_its_by_login(*login_list)
       post(
         'api/rest/public/subscription/checkItsByLogin',
         self,
@@ -51,7 +51,7 @@ module Portal1C
       )
     end
 
-    def check_industry_by_subscriber_code(subscriber_code_list)
+    def check_industry_by_subscriber_code(*subscriber_code_list)
       post(
         'api/rest/public/industry/checkIndustryBySubscriberCode',
         self,
@@ -59,7 +59,7 @@ module Portal1C
       )
     end
 
-    def check_industry_by_reg_num(reg_number_list)
+    def check_industry_by_reg_num(*reg_number_list)
       post(
         'api/rest/public/industry/checkByRegNum',
         self,
@@ -67,7 +67,7 @@ module Portal1C
       )
     end
 
-    def check_industry_by_login(login_list)
+    def check_industry_by_login(*login_list)
       post(
         'api/rest/public/industry/checkByLogin',
         self,
@@ -90,7 +90,7 @@ module Portal1C
       )
     end
 
-    def get_nomencluture_by_reg_numbers(reg_number_list)
+    def get_nomencluture_by_reg_numbers(*reg_number_list)
       post(
         'api/nomenclature/getByRegNumbers',
         self,
