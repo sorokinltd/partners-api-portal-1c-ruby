@@ -1,4 +1,5 @@
 # Ruby [partner-api.1c.ru](https://partner-api.1c.ru/api/swagger-ui/index.html)
+[![Build Status](https://github.com/sorokinltd/partners-api-portal-1c-ruby/workflows/CI/badge.svg)](https://github.com/Suban05/enjoyWord/actions)
 
 ## Usage
 
