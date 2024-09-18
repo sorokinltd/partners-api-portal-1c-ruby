@@ -121,5 +121,13 @@ module Portal1C
         body
       )
     end
+
+    def trial_tariffs(application_nick:, subscriber_code_list:)
+      post(
+        'api/trial-tariffs',
+        self,
+        { applicationNick: application_nick, subscriberCodeList: subscriber_code_list }
+      )
+    end
   end
 end

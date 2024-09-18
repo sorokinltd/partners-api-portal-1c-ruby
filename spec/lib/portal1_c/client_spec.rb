@@ -156,4 +156,20 @@ RSpec.describe Portal1C::Client do
       expect(data['found']).to be false
     end
   end
+
+  describe '#trial_tariffs' do
+    it 'gets trial tariffs' do
+      data = VCR.use_cassette('api/trial-tariffs') do
+        api.trial_tariffs(
+          application_nick: '1C-Reporting',
+          subscriber_code_list: %w[
+            CL-12345
+            CL-67890
+          ]
+        )
+      end
+      expect(data).to be_an_instance_of(Array)
+      expect(data.size).to eq(2)
+    end
+  end
 end
