@@ -12,118 +12,148 @@ RSpec.describe Portal1C::Client do
     expect(api).to be_an_instance_of(described_class)
   end
 
-  specify '#check_its_by_reg_num' do
-    data = VCR.use_cassette('api/check_its_by_reg_num') do
-      api.check_its_by_reg_num(reg_nums)
-    end
-    expect(data.length).to eq(3)
-  end
-
-  specify '#check_its_by_subscriber_code' do
-    data = VCR.use_cassette('api/check_its_by_subscriber_code') do
-      api.check_its_by_subscriber_code(codes)
-    end
-    expect(data.length).to eq(3)
-  end
-
-  specify '#check_its_by_login' do
-    data = VCR.use_cassette('api/check_its_by_login') do
-      api.check_its_by_login(logins)
-    end
-    expect(data.length).to eq(3)
-  end
-
-  specify '#subscriber' do
-    data = VCR.use_cassette('api/subscriber') do
-      api.subscriber(page: 0, size: 1)
-    end
-    expect(data['size']).to eq(1)
-    expect(data['page']).to eq(0)
-  end
-
-  specify '#billing_report' do
-    data = VCR.use_cassette('api/billing_report') do
-      api.billing_report(type: 'CLOUD_BACKUP', subscriber_code_list: codes)
-    end
-    expect(data).to be_an_instance_of(Hash)
-    expect(data['reportUeid']).to be_an_instance_of(String)
-  end
-
-  specify '#get_billing_report' do
-    data = VCR.use_cassette('api/get_billing_report') do
-      billing_report = api.billing_report(type: 'CLOUD_BACKUP', subscriber_code_list: codes)
-      api.get_billing_report(billing_report['reportUeid'])
-    end
-    expect(data['state']).to eq('OK')
-  end
-
-  specify '#check_industry_by_subscriber_code' do
-    program_accesses = VCR.use_cassette('api/check_industry_by_subscriber_code') do
-      api.check_industry_by_subscriber_code(['CL-46015'])
-    end
-    expect(program_accesses.first['status']).to eq('EmptyList')
-    expect(program_accesses.first['code']).to eq(106)
-  end
-
-  specify '#programs' do
-    data = VCR.use_cassette('api/programs') do
-      api.programs
-    end
-    expect(data.length).to be > 0
-  end
-
-  specify '#check_industry_by_reg_num' do
-    data = VCR.use_cassette('api/check_industry_by_reg_num') do
-      api.check_industry_by_reg_num(reg_nums)
-    end
-    expect(data.length).to eq(reg_nums.length)
-  end
-
-  specify '#check_industry_by_login' do
-    data = VCR.use_cassette('api/check_industry_by_login') do
-      api.check_industry_by_login(logins)
-    end
-    expect(data.length).to eq(3)
-  end
-
-  specify '#program_versions' do
-    data = VCR.use_cassette('api/program_versions') do
-      api.program_versions(cursor: 0, nick: 'CRM')
-    end
-    expect(data.length).to be > 0
-  end
-
-  specify '#get_nomencluture_by_reg_numbers' do
-    data = VCR.use_cassette('api/get_nomencluture_by_reg_numbers') do
-      api.get_nomencluture_by_reg_numbers(reg_nums)
-    end
-    expect(data.length).to eq(reg_nums.length)
-  end
-
-  specify '#client_program_access_by_reg_number' do
-    reg_num = 801_895_197
-    program_accesses = VCR.use_cassette('api/client_program_access_by_reg_number') do
-      api.client_program_access_by_reg_number(reg_number: reg_num)
-    end
-    expect(program_accesses).to be_an_instance_of(Array)
-    expect(program_accesses.length).to eq(3)
-    program_accesses.each do |description|
-      expect(description['regNumber']).to eq(reg_num)
+  describe '#check_its_by_reg_num' do
+    it 'checks a contract by reg num' do
+      data = VCR.use_cassette('api/check_its_by_reg_num') do
+        api.check_its_by_reg_num(reg_nums)
+      end
+      expect(data.length).to eq(3)
     end
   end
 
-  specify '#client_program_access_by_login' do
-    data = VCR.use_cassette('api/client_program_access_by_login') do
-      api.client_program_access_by_login(login: 'test')
+  describe '#check_its_by_subscriber_code' do
+    it 'checks a contract by subscriber code' do
+      data = VCR.use_cassette('api/check_its_by_subscriber_code') do
+        api.check_its_by_subscriber_code(codes)
+      end
+      expect(data.length).to eq(3)
     end
-    expect(data.length).to eq(0)
   end
 
-  specify '#users' do
-    data = VCR.use_cassette('api/users') do
-      api.users(login: 'test', email: 'test@email.com')
+  describe '#check_its_by_login' do
+    it 'checks a contract by login' do
+      data = VCR.use_cassette('api/check_its_by_login') do
+        api.check_its_by_login(logins)
+      end
+      expect(data.length).to eq(3)
     end
-    expect(data).to be_an_instance_of(Hash)
-    expect(data['found']).to be false
+  end
+
+  describe '#subscriber' do
+    it 'gets subscribers' do
+      data = VCR.use_cassette('api/subscriber') do
+        api.subscriber(page: 0, size: 1)
+      end
+      expect(data['size']).to eq(1)
+      expect(data['page']).to eq(0)
+    end
+  end
+
+  describe '#billing_report' do
+    it 'starts to get a billing report' do
+      data = VCR.use_cassette('api/billing_report') do
+        api.billing_report(type: 'CLOUD_BACKUP', subscriber_code_list: codes)
+      end
+      expect(data).to be_an_instance_of(Hash)
+      expect(data['reportUeid']).to be_an_instance_of(String)
+    end
+  end
+
+  describe '#get_billing_report' do
+    it 'gets a result of report' do
+      data = VCR.use_cassette('api/get_billing_report') do
+        billing_report = api.billing_report(type: 'CLOUD_BACKUP', subscriber_code_list: codes)
+        api.get_billing_report(billing_report['reportUeid'])
+      end
+      expect(data['state']).to eq('OK')
+    end
+  end
+
+  describe '#check_industry_by_subscriber_code' do
+    it 'checks industry by subscriber code' do
+      program_accesses = VCR.use_cassette('api/check_industry_by_subscriber_code') do
+        api.check_industry_by_subscriber_code(['CL-46015'])
+      end
+      expect(program_accesses.first['status']).to eq('EmptyList')
+      expect(program_accesses.first['code']).to eq(106)
+    end
+  end
+
+  describe '#programs' do
+    it 'gets list of programs' do
+      data = VCR.use_cassette('api/programs') do
+        api.programs
+      end
+      expect(data.length).to be > 0
+    end
+  end
+
+  describe '#check_industry_by_reg_num' do
+    it 'checks industry by reg num' do
+      data = VCR.use_cassette('api/check_industry_by_reg_num') do
+        api.check_industry_by_reg_num(reg_nums)
+      end
+      expect(data.length).to eq(reg_nums.length)
+    end
+  end
+
+  describe '#check_industry_by_login' do
+    it 'checks industry by login' do
+      data = VCR.use_cassette('api/check_industry_by_login') do
+        api.check_industry_by_login(logins)
+      end
+      expect(data.length).to eq(3)
+    end
+  end
+
+  describe '#program_versions' do
+    it 'gets program versions' do
+      data = VCR.use_cassette('api/program_versions') do
+        api.program_versions(cursor: 0, nick: 'CRM')
+      end
+      expect(data.length).to be > 0
+    end
+  end
+
+  describe '#get_nomencluture_by_reg_numbers' do
+    it 'gets numencluture by reg numbers' do
+      data = VCR.use_cassette('api/get_nomencluture_by_reg_numbers') do
+        api.get_nomencluture_by_reg_numbers(reg_nums)
+      end
+      expect(data.length).to eq(reg_nums.length)
+    end
+  end
+
+  describe '#client_program_access_by_reg_number' do
+    it 'gets client program access by reg_number' do
+      reg_num = 801_895_197
+      program_accesses = VCR.use_cassette('api/client_program_access_by_reg_number') do
+        api.client_program_access_by_reg_number(reg_number: reg_num)
+      end
+      expect(program_accesses).to be_an_instance_of(Array)
+      expect(program_accesses.length).to eq(3)
+      program_accesses.each do |description|
+        expect(description['regNumber']).to eq(reg_num)
+      end
+    end
+  end
+
+  describe '#client_program_access_by_login' do
+    it 'gets client program access by login' do
+      data = VCR.use_cassette('api/client_program_access_by_login') do
+        api.client_program_access_by_login(login: 'test')
+      end
+      expect(data.length).to eq(0)
+    end
+  end
+
+  describe '#users' do
+    it 'gets users list' do
+      data = VCR.use_cassette('api/users') do
+        api.users(login: 'test', email: 'test@email.com')
+      end
+      expect(data).to be_an_instance_of(Hash)
+      expect(data['found']).to be false
+    end
   end
 end
