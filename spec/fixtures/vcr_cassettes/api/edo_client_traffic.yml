@@ -1,0 +1,137 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://partner-api.1c.ru/api/edo/reports/client-traffic
+    body:
+      encoding: UTF-8
+      string: '{"inn":"1234","login":"login","subscriberCode":"code","periodFrom":"2025-02-11T04:19:59+00:00","periodTo":"2025-02-11T04:19:59+00:00"}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.10.1
+      Authorization:
+      - Basic <AUTH>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - ddos-guard
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=60
+      Set-Cookie:
+      - __ddg10_=1739248920; Domain=.1c.ru; Path=/; Expires=Tue, 11-Feb-2025 05:02:00
+        GMT
+      - __ddg1_=JJubqbpP3sGQhxyrgLdX; Domain=.1c.ru; HttpOnly; Path=/; Expires=Wed,
+        11-Feb-2026 04:42:00 GMT
+      - __ddg8_=UogsOEGssAx4pQhh; Domain=.1c.ru; Path=/; Expires=Tue, 11-Feb-2025
+        05:02:00 GMT
+      - __ddg9_=79.134.7.9; Domain=.1c.ru; Path=/; Expires=Tue, 11-Feb-2025 05:02:00
+        GMT
+      Content-Security-Policy:
+      - upgrade-insecure-requests;
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
+      X-Frame-Options:
+      - DENY
+      X-Application-Context:
+      - application:live:8840
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Tue, 11 Feb 2025 04:42:00 GMT
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"taskUeid":"6d02947e-e4a9-42d8-a3e2-3d0defaf5fc0","error":null}'
+  recorded_at: Tue, 11 Feb 2025 04:42:01 GMT
+- request:
+    method: get
+    uri: https://partner-api.1c.ru/api/edo/reports/client-traffic/6d02947e-e4a9-42d8-a3e2-3d0defaf5fc0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.10.1
+      Authorization:
+      - Basic <AUTH>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - ddos-guard
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=60
+      Set-Cookie:
+      - __ddg10_=1739248923; Domain=.1c.ru; Path=/; Expires=Tue, 11-Feb-2025 05:02:03
+        GMT
+      - __ddg1_=DKbSKKbeSC0Xm4Q7Tyxz; Domain=.1c.ru; HttpOnly; Path=/; Expires=Wed,
+        11-Feb-2026 04:42:03 GMT
+      - __ddg8_=sV8oGzyfBchRPO3S; Domain=.1c.ru; Path=/; Expires=Tue, 11-Feb-2025
+        05:02:03 GMT
+      - __ddg9_=79.134.7.9; Domain=.1c.ru; Path=/; Expires=Tue, 11-Feb-2025 05:02:03
+        GMT
+      Content-Security-Policy:
+      - upgrade-insecure-requests;
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
+      X-Frame-Options:
+      - DENY
+      X-Application-Context:
+      - application:live:8840
+      Content-Disposition:
+      - attachment; filename="client_traffic_report_11.02.2025.csv"
+      Content-Type:
+      - application/csv;charset=UTF-8
+      Date:
+      - Tue, 11 Feb 2025 04:42:03 GMT
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Tue, 11 Feb 2025 04:42:04 GMT
+recorded_with: VCR 6.2.0

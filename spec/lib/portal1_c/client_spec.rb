@@ -172,4 +172,37 @@ RSpec.describe Portal1C::Client do
       expect(data.size).to eq(2)
     end
   end
+
+  describe '#edo_client_traffic' do
+    it 'starts to get a edo client traffic report' do
+      data = VCR.use_cassette('api/edo_client_traffic') do
+        api.edo_client_traffic(
+          inn: '1234', 
+          login: 'login', 
+          subscriberCode: 'code', 
+          periodFrom: DateTime.parse("2025-02-11T04:19:59.972Z"), 
+          periodTo: DateTime.parse("2025-02-11T04:19:59.972Z")
+        )
+      end
+      expect(data).to be_an_instance_of(Hash)
+      binding.irb
+      expect(data['taskUeid']).to be_an_instance_of(String)
+    end
+  end
+
+  describe '#get_edo_client_traffic' do
+    it 'gets a result of report' do
+      data = VCR.use_cassette('api/edo_client_traffic') do
+        report = api.edo_client_traffic(
+          inn: '1234', 
+          login: 'login', 
+          subscriberCode: 'code', 
+          periodFrom: DateTime.parse("2025-02-11T04:19:59.972Z"), 
+          periodTo: DateTime.parse("2025-02-11T04:19:59.972Z")
+        )
+        api.get_edo_client_traffic(report['taskUeid'])
+      end
+      expect(data['state']).to eq('OK')
+    end
+  end
 end

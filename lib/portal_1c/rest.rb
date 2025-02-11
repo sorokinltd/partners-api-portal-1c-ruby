@@ -129,5 +129,35 @@ module Portal1C
         { applicationNick: application_nick, subscriberCodeList: subscriber_code_list }
       )
     end
+
+    def edo_client_traffic(body)
+      post(
+        'api/edo/reports/client-traffic',
+        self,
+        body
+      )
+    end
+
+    def get_edo_client_traffic(task_id)
+      get(
+        "api/edo/reports/client-traffic/#{task_id}",
+        self
+      )
+    end
+
+    def edo_billing(body)
+      post(
+        'api/edo/reports/billing',
+        self,
+        body
+      )
+    end
+
+    def get_edo_billing(task_id)
+      get(
+        "api/edo/reports/billing/#{task_id}",
+        self
+      )
+    end
   end
 end
